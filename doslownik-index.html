@@ -27,6 +27,7 @@ let showAnswer = false;
 
 let timeLeft = 10;
 let timerInterval = null;
+let timeUp = false;
 
 // wczytanie JSON
 window.onload = () => {
@@ -41,10 +42,11 @@ window.onload = () => {
     });
 };
 
-// 🔥 TIMER
+// ⏱️ TIMER
 function startTimer() {
   clearInterval(timerInterval);
   timeLeft = 10;
+  timeUp = false;
 
   const timerEl = document.getElementById("question-timer");
 
@@ -68,11 +70,36 @@ function startTimer() {
 
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
-      nextQuestion(); // 👉 auto przejście dalej
+      timeUp = true;
+
+      // 👉 ZAMIANA NA "Sprawdź odpowiedź"
+      showCheckAnswerScreen();
     }
   }, 1000);
 }
 
+// 🟡 ekran po czasie
+function showCheckAnswerScreen() {
+  document.getElementById('literal').innerHTML = `
+    <h1 class="ibm-plex-mono-medium reveal-text">
+      ⏳ Czas minął
+    </h1>
+    <p class="ibm-plex-mono-medium">
+      Sprawdź odpowiedź
+    </p>
+  `;
+
+  document.querySelector('footer').innerHTML = `
+    <div class="round-btn" id="question-timer"></div>
+    <div id="question-counter">Pytanie ${current + 1} / ${data.length}</div>
+    <div class="round-btn" onclick="showSolution()">Odpowiedź</div>
+  `;
+
+  // pokazujemy timer (zamrożony lub restart opcjonalny)
+  document.getElementById("question-timer").textContent = "0s";
+}
+
+// 📌 pytanie
 function loadQuestion() {
   showAnswer = false;
 
@@ -90,12 +117,12 @@ function loadQuestion() {
     <div class="round-btn" onclick="showSolution()">Odpowiedź</div>
   `;
 
-  // 🔥 WAŻNE: start timera PO wstawieniu HTML
   startTimer();
 }
 
+// 📖 pokazanie odpowiedzi
 function showSolution() {
-  clearInterval(timerInterval); // ⛔ zatrzymaj timer
+  clearInterval(timerInterval);
 
   const item = data[current];
 
@@ -115,13 +142,14 @@ function showSolution() {
   `;
 }
 
+// ➡️ następne pytanie
 function nextQuestion() {
-  clearInterval(timerInterval); // ⛔ bezpieczeństwo
+  clearInterval(timerInterval);
 
   current++;
 
   if (current >= data.length) {
-    current = 0; // albo zakończ grę
+    current = 0;
   }
 
   loadQuestion();
