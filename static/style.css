@@ -83,7 +83,7 @@ main h1{
    text-shadow: 1px 1px 1px var(--light-color);
   }
 
-  main p#explanation {
+  main p {
   font-size: var(--fontsize);
   margin-top: var(--padding);
 }
