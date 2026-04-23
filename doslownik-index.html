@@ -56,9 +56,11 @@ function startTimer() {
     timerEl.textContent = timeLeft + "s";
 
     if (timeLeft <= 3) {
-      timerEl.style.color = "red";
+      timerEl.style.backgroundColor = getComputedStyle(document.documentElement)
+  .getPropertyValue('--negative-color');
     } else {
-      timerEl.style.color = "white";
+      timerEl.style.backgroundColor = getComputedStyle(document.documentElement)
+  .getPropertyValue('--dark-color');
     }
   }
 
