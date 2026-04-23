@@ -10,6 +10,7 @@
     <meta name="description" content="Dosłownik to gra słowna, w której gracze muszą odgadnąć oryginalne słowo lub frazę na podstawie dosłownego opisu. Gra rozwija kreatywność i umiejętność kojarzenia, a także jest świetną zabawą dla osób w każdym wieku.">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/x-icon" href="static/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,7 +88,7 @@ function nextQuestion() {
 <div class="container quicksand-600">
   <header class="header"><div id="logo"><img src="static/logo.png" alt="Logo"></div><div class="title">Dosłownik</div></header>
   <main class="content content-en" id="literal">
-    <h1 class="ibm-plex-mono-medium  reveal-text">A wolf carried away a few times and was carried away itself. <span class="emoji">&#128058;</span></h1>
+    <h1 class="ibm-plex-mono-medium  reveal-text"><span class="emoji"></span></h1>
   
   </main>
   <footer class="footer"><div class="round-btn" id="question-timer"></div><div id="question-counter">Pytanie 7 / 10</div><div class="round-btn" onclick="showSolution()">Odpowiedź</div></footer>
