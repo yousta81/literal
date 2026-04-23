@@ -1,0 +1,137 @@
+[
+ {
+   "literal": "Making large eyes.",
+   "original": "Robić wielkie oczy.",
+   "explanation_en": "To be very surprised.",
+   "category": "emotions",
+   "difficulty": "easy",
+   "emoji": "eyes",
+   "emoji-dec": 128064
+ },
+ {
+   "literal": "To get wet to a dry thread.",
+   "original": "Przemoknąć do suchej nitki.",
+   "explanation_en": "To be completely soaked, dripping wet.",
+   "category": "",
+   "difficulty": "medium",
+   "emoji": "umbrella",
+   "emoji-dec": 9748
+ },
+ {
+   "literal": "Fall off the Christmas tree.",
+   "original": "Urwać się z choinki.",
+   "explanation_en": "To live under a rock, to have born yesterday.",
+   "category": "",
+   "difficulty": "hard",
+   "emoji": "evergreen",
+   "emoji-dec": 127794
+ },
+ {
+   "literal": "To be not in souce.",
+   "original": "Być nie w sosie.",
+   "explanation_en": "To be in a bad mood.",
+   "category": "emotions",
+   "difficulty": "easy",
+   "emoji": "pot of food",
+   "emoji-dec": 127858
+ },
+ {
+   "literal": "A matter not suffering a corpse.",
+   "original": "Sprawa nie cierpiąca zwłoki.",
+   "explanation_en": "A matter requiring immediate action. Polish word for \"corpse\" is \"zwłoki\", and it's \"zwłoka\" is a homonim for \"delay\".",
+   "category": "homonym",
+   "difficulty": "hard",
+   "emoji": "skull",
+   "emoji-dec": 128128
+ },
+ {
+   "literal": "Feet paradise.",
+   "original": "Rajstopy.",
+   "explanation_en": "Tights worn on the legs. \"Raj\" means \"paradise, \"stopy\" means \"feet\".",
+   "category": "",
+   "difficulty": "hard",
+   "emoji": "footprints",
+   "emoji-dec": 128099
+ },
+ {
+   "literal": "Volleyball of the eye.",
+   "original": "Siatkówka oka.",
+   "explanation_en": "The retina of the eye. Polish word \"siatkówka\" means either \"volleyball\" or \"retina\".",
+   "category": "homonym",
+   "difficulty": "hard",
+   "emoji": "eyes",
+   "emoji-dec": 128064
+ },
+ {
+   "literal": "Ointment for butthurt.",
+   "original": "Maść na ból dupy.",
+   "explanation_en": "It symbolizes a remedy for jealousy, envy, frustration and hate.",
+   "category": "adult",
+   "difficulty": "easy",
+   "emoji": "pill",
+   "emoji-dec": 128138
+ },
+ {
+   "literal": "Target sanctifies the middles.",
+   "original": "Cel uświęca środki.",
+   "explanation_en": "A desirable outcome justifies questionable actions. \"Środki\" is plural for middle of sth, may also be \"remedy\" or \"means\".",
+   "category": "homonym",
+   "difficulty": "medium",
+   "emoji": "target",
+   "emoji-dec": 127919
+ },
+ {
+   "literal": "Undergo like a dog to a hedgehog.",
+   "original": "Podchodzić jak pies do jeża.",
+   "explanation_en": "To approach something with reluctance and caution.",
+   "category": "animals",
+   "difficulty": "easy",
+   "emoji": "hedgehog",
+   "emoji-dec": 129428
+ },
+ {
+   "literal": "Elderberry pictures.",
+   "original": "Bez obrazy.",
+   "explanation_en": "No offense. Polish word \"bez\" is a homonym for \"elderberry\" or \"without\", \"obrazy\" are \"pictures\", \"obraza\" is \"offense\".",
+   "category": "homonym",
+   "difficulty": "hard",
+   "emoji": "picture",
+   "emoji-dec": 128444
+ },
+ {
+   "literal": "In the face of a hedgehog.",
+   "original": "W mordę jeża.",
+   "explanation_en": "A mild exclamation of surprise.",
+   "category": "animals",
+   "difficulty": "medium",
+   "emoji": "hedgehog",
+   "emoji-dec": 129428
+ },
+ {
+   "literal": "Slowness of word.",
+   "original": "Wolność słowa.",
+   "explanation_en": "Freedom of speech. Homonim \"wolny\" may either mean \"freed\" or \"slow\".",
+   "category": "homonym",
+   "difficulty": "medium",
+   "emoji": "loudspeaker",
+   "emoji-dec": 128226
+ },
+ {
+   "literal": "A wolf carried away a few times and was carried away itself.",
+   "original": "Nosił wilk razy kilka, ponieśli i wilka.",
+   "explanation_en": "One can get away with bad behaviour only a few times before it is noticed and punished.",
+   "category": "proverb, rhyme, animals",
+   "difficulty": "easy",
+   "emoji": "wolf",
+   "emoji-dec": 128058
+ },
+ {
+   "literal": "Blind street.",
+   "original": "Ślepa uliczka.",
+   "explanation_en": "Dead end.",
+   "category": "",
+   "difficulty": "medium",
+   "emoji": "sunglasses",
+   "emoji-dec": 128374
+ }
+]

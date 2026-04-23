@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dosłownik</title>
+    <link rel="stylesheet" href="static/style.css">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="static/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+
+  
+</head>
+<body>
+<script>
+let data = [];
+let current = 0;
+let showAnswer = false;
+
+// wczytanie JSON
+window.onload = () => {
+  fetch('literal.json')
+    .then(res => res.json())
+    .then(json => {
+      data = json;
+      loadQuestion();
+    })
+    .catch(err => {
+      console.error("Błąd wczytywania JSON:", err);
+    });
+};
+
+function loadQuestion() {
+  showAnswer = false;
+
+  const item = data[current];
+
+  document.getElementById('literal').innerHTML = `
+    <h1 class="ibm-plex-mono-medium reveal-text">
+      ${item.literal} <span class="emoji">${String.fromCodePoint(item["emoji-dec"])}</span>
+    </h1>
+  `;
+
+  document.querySelector('footer').innerHTML = `
+    <div class="round-btn" id="question-timer"></div>
+    <div id="question-counter">Pytanie ${current + 1} / ${data.length}</div>
+    <div class="round-btn" onclick="showSolution()">Odpowiedź</div>
+  `;
+}
+
+function showSolution() {
+  const item = data[current];
+
+  document.getElementById('literal').innerHTML = `
+    <h1 class="ibm-plex-mono-medium reveal-text">
+      ${item.original}
+    </h1>
+    <p id="explanation" class="reveal-text-delayed ibm-plex-mono-medium">
+      ${item.explanation_en}
+    </p>
+  `;
+
+  document.querySelector('footer').innerHTML = `
+    <div class="round-btn negative" onclick="nextQuestion()">Źle</div>
+    <div id="question-counter">Pytanie ${current + 1} / ${data.length}</div>
+    <div class="round-btn positive" onclick="nextQuestion()">Dobrze</div>
+  `;
+}
+
+function nextQuestion() {
+  current++;
+
+  if (current >= data.length) {
+    current = 0; // albo zakończ grę
+  }
+
+  loadQuestion();
+}
+</script>
+<div class="container quicksand-600">
+  <header class="header"><div id="logo"><img src="static/logo.png" alt="Logo"></div><div class="title">Dosłownik</div></header>
+  <main class="content content-en" id="literal">
+    <h1 class="ibm-plex-mono-medium  reveal-text">A wolf carried away a few times and was carried away itself. <span class="emoji">&#128058;</span></h1>
+  
+  </main>
+  <footer class="footer"><div class="round-btn" id="question-timer"></div><div id="question-counter">Pytanie 7 / 10</div><div class="round-btn" onclick="showSolution()">Odpowiedź</div></footer>
+</div>
+
+       
+        
+</body>
+</html>
