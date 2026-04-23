@@ -29,6 +29,9 @@ let timeLeft = 10;
 let timerInterval = null;
 let timeUp = false;
 
+const rootStyles = getComputedStyle(document.documentElement);
+const negativeColor = rootStyles.getPropertyValue('--negative-color');
+
 // wczytanie JSON
 window.onload = () => {
   fetch('literal.json')
@@ -50,18 +53,17 @@ function startTimer() {
 
   const timerEl = document.getElementById("question-timer");
 
+
   function updateTimer() {
     if (!timerEl) return;
 
     timerEl.textContent = timeLeft + "s";
 
     if (timeLeft <= 3) {
-      timerEl.style.backgroundColor = getComputedStyle(document.documentElement)
-  .getPropertyValue('--negative-color');
-    } else {
-      timerEl.style.backgroundColor = getComputedStyle(document.documentElement)
-  .getPropertyValue('--dark-color');
-    }
+  timerEl.style.color = negativeColor;
+} else {
+  timerEl.style.color = "";
+}
   }
 
   updateTimer();
