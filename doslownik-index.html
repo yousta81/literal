@@ -25,6 +25,9 @@ let data = [];
 let current = 0;
 let showAnswer = false;
 
+let timeLeft = 10;
+let timerInterval = null;
+
 // wczytanie JSON
 window.onload = () => {
   fetch('literal.json')
@@ -37,6 +40,38 @@ window.onload = () => {
       console.error("Błąd wczytywania JSON:", err);
     });
 };
+
+// 🔥 TIMER
+function startTimer() {
+  clearInterval(timerInterval);
+  timeLeft = 10;
+
+  const timerEl = document.getElementById("question-timer");
+
+  function updateTimer() {
+    if (!timerEl) return;
+
+    timerEl.textContent = timeLeft + "s";
+
+    if (timeLeft <= 3) {
+      timerEl.style.color = "red";
+    } else {
+      timerEl.style.color = "white";
+    }
+  }
+
+  updateTimer();
+
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    updateTimer();
+
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      nextQuestion(); // 👉 auto przejście dalej
+    }
+  }, 1000);
+}
 
 function loadQuestion() {
   showAnswer = false;
@@ -54,9 +89,14 @@ function loadQuestion() {
     <div id="question-counter">Pytanie ${current + 1} / ${data.length}</div>
     <div class="round-btn" onclick="showSolution()">Odpowiedź</div>
   `;
+
+  // 🔥 WAŻNE: start timera PO wstawieniu HTML
+  startTimer();
 }
 
 function showSolution() {
+  clearInterval(timerInterval); // ⛔ zatrzymaj timer
+
   const item = data[current];
 
   document.getElementById('literal').innerHTML = `
@@ -76,6 +116,8 @@ function showSolution() {
 }
 
 function nextQuestion() {
+  clearInterval(timerInterval); // ⛔ bezpieczeństwo
+
   current++;
 
   if (current >= data.length) {
